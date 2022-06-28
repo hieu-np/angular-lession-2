@@ -1,0 +1,73 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table pipe-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Custom Pipe</th>
+            <th scope="col">Dữ liệu đầu vào</th>
+            <th scope="col">Kết quả hiển thị</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              Đoạn văn bản dài + ...<br />
+              'formatdata' <br />
+              "uppercase"
+            </td>
+            <td>{{ content }}</td>
+            <td>{{ content | FormatData: 10:20 }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table pipe-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên sản phẩm</th>
+            <th scope="col">Tình trạng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="idFilter" />
+            </td>
+
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="nameFilter"
+              />
+            </td>
+            <td>
+              <select class="form-select" [(ngModel)]="statusFilter">
+                <option value="all">Tất cả</option>
+                <option value="true">Còn hàng</option>
+                <option value="false">Hết hàng</option>
+              </select>
+            </td>
+          </tr>
+          <tr
+            *ngFor="
+              let item of products | filter: idFilter:nameFilter:statusFilter
+            "
+          >
+            <th scope="row">{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.status ? "Còn hàng" : "Hết hàng" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

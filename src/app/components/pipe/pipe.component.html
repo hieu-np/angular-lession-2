@@ -1,0 +1,99 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table pipe-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên Pipe</th>
+            <th scope="col">Dữ liệu đầu vào</th>
+            <th scope="col">Kết quả hiển thị</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>UpperCase <br> "uppercase"</td>
+            <td>{{content}}</td>
+            <td>{{content | uppercase}}</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>LowerCase <br> "lowercase"</td>
+            <td>{{content}}</td>
+            <td>{{content | lowercase}}</td>
+          </tr>
+          <tr>
+            <th scope="row">3.1</th>
+            <td>TitleCase <br> "titlecase"</td>
+            <td>{{content}}</td>
+            <td>{{content | titlecase}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">3.2</th>
+            <td>TitleCase <br> "titlecase"</td>
+            <td>{{name}}</td>
+            <td>{{name | titlecase}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">4</th>
+            <td>Slice <br> "slice:s:e"</td>
+            <td>{{title}}</td>
+            <td>{{title | slice :4:11}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">5</th>
+            <td>Decimal <br> "number: '3.0-5' " <br> 001.12000</td>
+            <td>{{amount}}</td>
+            <td>{{amount | number :'1.0-3'}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">6</th>
+            <td>Percent <br> "percent <br> :'1.0-3' "</td>
+            <td>{{result}}</td>
+            <td>{{result | percent :'1.0-3'}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">7</th>
+            <td>Slice [] <br> "slice:s:e"</td>
+            <td>{{names}}</td>
+            <td>{{names | slice :1:2}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">8</th>
+            <td>Currency <br> "currency <br> :code <br> :true/false" <br> :1.0-3</td>
+            <td>{{total}}</td>
+            <td>{{total | currency:'VND':'symbol':'1.0-3' }}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">9</th>
+            <td>Date <br> "date <br> :'dd/MM/y <br> HH/mm/ss a'"</td>
+            <td>{{today}}</td>
+            <td>{{today | date :'dd/MM/y HH/mm/ss a'}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">10</th>
+            <td>Json <br> "json" </td>
+            <td>{{product}}</td>
+            <td>{{product | json}}</td>
+          </tr>
+
+          <tr>
+            <th scope="row">11</th>
+            <td>Json + UpperCase <br> "json" </td>
+            <td>{{product}}</td>
+            <td>{{product | json | uppercase}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

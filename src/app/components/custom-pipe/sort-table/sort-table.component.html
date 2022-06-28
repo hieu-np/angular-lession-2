@@ -1,0 +1,35 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table pipe-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col" (click)="onSort('name')" style="display: flex;">
+              Name
+              <div [hidden]="sortValue == -1"><i class="fa-solid fa-arrow-down-1-9 text-success mouse-pointer"></i></div>
+              <div [hidden]="sortValue == 1"><i class="fa-solid fa-arrow-down-9-1 text-danger mouse-pointer"></i></div>
+              
+            </th>
+            <th scope="col" (click)="onSort('price')">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+          *ngFor="let i = index; 
+          let item of products 
+          | sorttable:sortBy:sortValue">
+            <th scope="row">{{i + 1}}</th>
+            <td>
+              {{item.id | number:'3.0-0'}}
+            </td>
+            <td >{{item.name}}</td>
+            <td >
+              {{item.price | currency:'USD':'symbol':'1.0-0'}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

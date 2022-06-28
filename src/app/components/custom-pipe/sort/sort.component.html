@@ -1,0 +1,33 @@
+<div class="container" [style.margin-top.px]="30">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <table class="table pipe-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dữ liệu đầu vào</th>
+            <th scope="col">Kết quả hiển thị</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td style="display: flex; margin-bottom: -1px;">
+              <p style="margin-right: 5px;">{{ arrNumber }}</p>
+              <p [hidden]="sortValue == -1" class="text-success mouse-pointer" (click)="onHandleSort(-1)"><i class="fa-solid fa-arrow-down-1-9"></i></p>
+              <p [hidden]="sortValue == 1" class="text-danger mouse-pointer" (click)="onHandleSort(1)"><i class="fa-solid fa-arrow-down-9-1"></i></p>
+            </td>
+            <td>{{ arrNumber | sortNumber:sortValue }}</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+             <input type="text" class="form-control"
+             [(ngModel)]="name">
+            </td>
+            <td>{{name | capitalize}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
