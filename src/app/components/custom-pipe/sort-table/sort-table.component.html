@@ -6,30 +6,82 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">ID</th>
-            <th scope="col" (click)="onSort('name')" style="display: flex;">
-              Name
-              <div [hidden]="sortValue == -1"><i class="fa-solid fa-arrow-down-1-9 text-success mouse-pointer"></i></div>
-              <div [hidden]="sortValue == 1"><i class="fa-solid fa-arrow-down-9-1 text-danger mouse-pointer"></i></div>
-              
+            <th scope="col">
+              <div style="display: flex">
+                Name &nbsp;
+                <div [hidden]="sortBy === 'name' "  (click)="onSort('name')" >
+                  <i
+                    class="fa-solid fa-sort text-primar mouse-pointer"
+                  ></i>
+                </div>
+                <div [hidden]="sortValue == -1 || sortBy === 'price' || sortBy === ''" (click)="onSort('name')">
+                  <i
+                    class="fa-solid fa-arrow-down-1-9 text-success mouse-pointer"
+                  ></i>
+                </div>
+                
+                <div [hidden]="sortValue == 1 || sortBy === 'price' || sortBy === ''" (click)="onSort('name')">
+                  <i
+                    class="fa-solid fa-arrow-down-9-1 text-primary mouse-pointer"
+                  ></i>
+                </div>
+                &nbsp;
+                <div [hidden]="sortBy === '' || sortBy === 'price'" (click)="onSort('')">
+                  <i
+                    class="fa-solid fa-times text-warning mouse-pointer"
+                  ></i>
+                </div>
+              </div>
             </th>
-            <th scope="col" (click)="onSort('price')">Price</th>
+            <th scope="col"  >
+              <div style="display: flex">
+                Price &nbsp;
+
+                <div [hidden]="sortBy === 'price'"  (click)="onSort('price')" >
+                  <i
+                    class="fa-solid fa-sort text-primar mouse-pointer"
+                  ></i>
+                </div>
+                <div [hidden]="sortValue == -1 || sortBy === 'name' || sortBy === ''" (click)="onSort('price')">
+                  <i
+                    class="fa-solid fa-arrow-down-1-9 text-success mouse-pointer"
+                  ></i>
+                </div>
+                <div [hidden]="sortValue == 1 || sortBy === 'name' || sortBy === ''" (click)="onSort('price')">
+                  <i
+                    class="fa-solid fa-arrow-down-9-1 text-danger mouse-pointer"
+                  ></i>
+                </div>
+                &nbsp;
+                <div [hidden]="sortBy === '' || sortBy === 'name'" (click)="onSort('')">
+                  <i
+                    class="fa-solid fa-times text-warning mouse-pointer"
+                  ></i>
+                </div>
+                
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr
-          *ngFor="let i = index; 
-          let item of products 
-          | sorttable:sortBy:sortValue">
-            <th scope="row">{{i + 1}}</th>
+            *ngFor="
+              let i = index;
+              let item;
+              of: products | sorttable: sortBy:sortValue
+            "
+          >
+            <th scope="row">{{ i + 1 }}</th>
             <td>
-              {{item.id | number:'3.0-0'}}
+              {{ item.id | number: "3.0-0" }}
             </td>
-            <td >{{item.name}}</td>
-            <td >
-              {{item.price | currency:'USD':'symbol':'1.0-0'}}
+            <td>{{ item.name }}</td>
+            <td>
+              {{ item.price | currency: "USD":"symbol":"1.0-0" }}
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+</div>

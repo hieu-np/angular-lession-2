@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-4 mt-3">
+      <div class="card border-primary">
+        <div class="card-header bg-primary text-white">App Component</div>
+        <div class="card-body">
+          <ng-container>
+            <app-otherlifecyclechild>
+              <h1>H1</h1>
+              <h2>H2</h2>
+              <h3 class="myClass">H3</h3>
+              <h4 id="myID">value: h4</h4>
+              <h5>Value: H5 tag</h5>
+              <div myAttr>This í my div tag</div>
+              <span course="angular4">Angular 13</span>
+              <p handsome demo>you are handsome</p>
+            </app-otherlifecyclechild>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="card-footer">Footer</div> -->
+    <div class="col col-4 mt-3">
+      <div class="card border-danger">
+        <div class="card-header bg-danger text-white">App Component</div>
+        <div class="card-body">
+          <ng-container>
+            <app-otherlifecyclechildtwo>
+              <h1 #value>{{ content }}</h1>
+            </app-otherlifecyclechildtwo>
+
+            <input type="text" class="form-control" #text />
+            <button
+              type="button"
+              class="btn btn-info"
+              (click)="onClick(text.value)"
+            >
+              Click Me!
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <!-- three -->
+
+    <div class="col col-4 mt-3">
+      <div class="card border-secondary">
+        <div class="card-header bg-secondary text-white">App Component</div>
+        <div class="card-body">
+          <div class="card border-info mb-3">
+            <div class="card-header bg-info text-white">{{ title }}</div>
+            <div class="card-body">
+              <ul class="list-group" #ulproducts>
+                <li class="list-group-item" *ngFor="let item of products">
+                  {{item.id | number:'3.0-0'}} - {{item.name}}
+                </li>
+              </ul>
+              <input type="text" class="form-control" #product>
+              <button type="button" class="btn btn-danger"
+              (click)="addProduct(product.value)"
+              >Add Product</button>
+            </div>
+            <!-- <div class="card-footer">Footer</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

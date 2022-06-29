@@ -13,6 +13,18 @@ import { SortNumberPipe } from './pipes/sort-number.pipe';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { SortTableComponent } from './components/custom-pipe/sort-table/sort-table.component';
 import { SorttablePipe } from './pipes/sorttable.pipe';
+import { TemplateComponent } from './views/template/template.component';
+import { TemRefVarComponent } from './components/tem-ref-var/tem-ref-var.component';
+import { LifecycleHooksComponent } from './views/lifecycle-hooks/lifecycle-hooks.component';
+import { NgOnInitComponent } from './components/ng-on-init/ng-on-init.component';
+import { NgOnInitChildComponent } from './components/ng-on-init-child/ng-on-init-child.component';
+import { OtherlifecycleComponent } from './components/otherlifecycle/otherlifecycle.component';
+import { OtherlifecyclechildComponent } from './components/otherlifecyclechild/otherlifecyclechild.component';
+import { OtherlifecyclechildtwoComponent } from './components/otherlifecyclechildtwo/otherlifecyclechildtwo.component';
+import { OtherlifecyclechildthreeComponent } from './components/otherlifecyclechildthree/otherlifecyclechildthree.component';
+import { ServiceViewComponent } from './views/service-view/service-view.component';
+import { FirtComponent } from './components/forServiceView/firt/firt.component';
+import { SecondComponent } from './components/forServiceView/second/second.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +38,18 @@ import { SorttablePipe } from './pipes/sorttable.pipe';
     CapitalizePipe,
     SortTableComponent,
     SorttablePipe,
+    TemplateComponent,
+    TemRefVarComponent,
+    LifecycleHooksComponent,
+    NgOnInitComponent,
+    NgOnInitChildComponent,
+    OtherlifecycleComponent,
+    OtherlifecyclechildComponent,
+    OtherlifecyclechildtwoComponent,
+    OtherlifecyclechildthreeComponent,
+    ServiceViewComponent,
+    FirtComponent,
+    SecondComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="card border-success mb-3">
+  <div class="card-header bg-success text-white">{{title}}</div>
+  <div class="card-body" >
+    <h3>abc</h3>
+    <ng-content></ng-content>
+    <hr>
+    <ng-content select=".myClass"></ng-content>
+    <hr>
+    <ng-content select="h5"></ng-content>
+    <hr>
+    <ng-content select="[myAttr]"></ng-content>
+    <hr>
+    <ng-content select="[course=angular4]"></ng-content>
+    <hr>
+    <!-- <ng-content select="[handsome]"></ng-content> -->
+    <!-- <hr> -->
+    <ng-content select="[handsome][demo]"></ng-content>
+  </div>
+  <!-- <div class="card-footer">Footer</div> -->
+</div>

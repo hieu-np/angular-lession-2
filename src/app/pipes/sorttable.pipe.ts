@@ -21,6 +21,13 @@ export class SorttablePipe implements PipeTransform {
         else return 0;
       })
     }
+    if(args[0] === ''){
+      value.sort((a: any, b: any) => {
+        if(a.id > b.id) return 1;
+        else if(a.id < b.id) return -1;
+        else return 0;
+      })
+    }
     return [...value];
   }
 

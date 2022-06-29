@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-12 mt-3">
+      <div class="card border-primary">
+        <div class="card-header bg-primary text-white">Header</div>
+        <div class="card-body">
+          <input type="text" name="txtName" id="txtName" class="form-control"
+          [(ngModel)]="txtName">
+          <button
+          [style.margin-top.px]="10" type="button" class="btn btn-primary"
+          (click)="onGetData()"
+          >Add</button>
+        </div>
+        <!-- <div class="card-footer">Footer</div> -->
+      </div>
+    </div>
+  </div>
+</div>

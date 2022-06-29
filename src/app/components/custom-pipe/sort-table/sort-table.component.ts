@@ -50,8 +50,8 @@ export class SortTableComponent implements OnInit {
     }
   ];
 
-  sortBy: string = 'name'; //price
-  sortValue: number = 1; // 1 tăng -1 giảm
+  sortBy: string = ''; //price
+  sortValue: number = -1; // 1 tăng -1 giảm
   onSort(col:any) {
     this.sortBy = col;
     this.sortValue = -this.sortValue;
