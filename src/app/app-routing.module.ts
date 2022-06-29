@@ -9,6 +9,8 @@ import { LifecycleHooksComponent } from './views/lifecycle-hooks/lifecycle-hooks
 import { NgOnInitComponent } from './components/ng-on-init/ng-on-init.component';
 import { OtherlifecycleComponent } from './components/otherlifecycle/otherlifecycle.component';
 import { ServiceViewComponent } from './views/service-view/service-view.component';
+import { MovieViewComponent } from './views/movie-view/movie-view.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'pipe', pathMatch: 'full' },
   { path: 'pipe', component: PipeComponent },
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'lifecyclehooks/ngoninit', component: NgOnInitComponent },
   { path: 'lifecyclehooks/others', component: OtherlifecycleComponent },
   { path: 'serviceview', component: ServiceViewComponent },
+  { path: 'serviceview/movie', component: MovieViewComponent },
   { path: '**', redirectTo: 'pipe', pathMatch: 'full' },
 ];
 

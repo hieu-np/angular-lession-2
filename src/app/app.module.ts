@@ -26,6 +26,11 @@ import { ServiceViewComponent } from './views/service-view/service-view.componen
 import { FirtComponent } from './components/forServiceView/firt/firt.component';
 import { SecondComponent } from './components/forServiceView/second/second.component';
 
+import { LoggingService } from './services/logging.service';
+import { MovieViewComponent } from './views/movie-view/movie-view.component';
+import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
+import { MovieAddEditComponent } from './components/movie/movie-add-edit/movie-add-edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,13 +55,19 @@ import { SecondComponent } from './components/forServiceView/second/second.compo
     ServiceViewComponent,
     FirtComponent,
     SecondComponent,
+    MovieViewComponent,
+    MovieListComponent,
+    MovieAddEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    LoggingService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

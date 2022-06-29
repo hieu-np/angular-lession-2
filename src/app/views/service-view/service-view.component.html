@@ -1,13 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col col-12 mt-3">
-      <div class="card border-primary">
-        <div class="card-header bg-primary text-white">{{title}}</div>
-        <div class="card-body">
+    <div class="col col-12 mt-3 fw-bold text-danger">
+      {{title}}
+    </div>
+    <div class="col col-6 mt-3">
+      <app-firt></app-firt>
 
-        </div>
-        <!-- <div class="card-footer">Footer</div> -->
-      </div>
+    </div>
+    <div class="col col-6 mt-3">
+
+      <app-second></app-second>
+    </div>
+    <div class="col col-12 mt-3">
+      <button class="btn form-control btn-dark" routerLinkActive="active" routerLink="/serviceview/movie">Movie management</button>
     </div>
   </div>
 </div>
