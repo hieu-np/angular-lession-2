@@ -12,7 +12,7 @@ import { ServiceViewComponent } from './views/service-view/service-view.componen
 import { MovieViewComponent } from './views/movie-view/movie-view.component';
 import { HomeRoutingComponent } from './components/routings/home-routing/home-routing.component';
 import { ProductDetailComponent } from './components/routings/product-detail/product-detail.component';
-
+import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-query/home-pgae-query.component';
 const routes: Routes = [
   { path: '', redirectTo: 'pipe', pathMatch: 'full' },
   { path: 'pipe', component: PipeComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'serviceview/movie', component: MovieViewComponent },
   { path: 'homerouting', component: HomeRoutingComponent },
   { path: 'productdetail/:id', component: ProductDetailComponent },
-  // { path: 'homerouting', component: HomeRoutingComponent },
+  { path: 'homeroutingquery', component: HomePgaeQueryComponent },
   // { path: 'homerouting', component: HomeRoutingComponent },
   // { path: 'homerouting', component: HomeRoutingComponent },
   { path: '**', redirectTo: 'pipe', pathMatch: 'full' },
