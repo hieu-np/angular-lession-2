@@ -1,26 +1,26 @@
 <div class="card border-success">
   <div class="card-header bg-success text-white">{{ title }}</div>
   <div class="card-body">
-    <form action="" method="POST" role="form">
+    <form name='addMovieForm'role="form">
 
       <div class="form-group mb-3">
         <label for="">Tên phim</label>
-        <input type="text" class="form-control" />
+        <input type="text" name="txtName" id="txtName" class="form-control" [(ngModel)]="txtName" />
       </div>
 
       <div class="form-group mb-3">
         <label for="">Đường dẫn</label>
-        <input type="text" class="form-control" />
+        <input name="txtLink" id="txtLink"  type="text" class="form-control" [(ngModel)]="txtLink"/>
       </div>
 
       <div class="form-group mb-3">
         <label for="">Tác giả</label>
-        <input type="text" class="form-control" />
+        <input name="txtAuthor" id="txtAuthor"  type="text" class="form-control" [(ngModel)]="txtAuthor"/>
       </div>
 
       <div class="form-group mb-3">
         <button type="button" class="btn btn-outline-success fw-bold form-control"
-
+          (click)="addMovie()"
         >
           Thêm Phim
         </button>

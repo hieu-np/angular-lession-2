@@ -1,3 +1,10 @@
 .pipe-table{
   box-shadow: 15px 15px 30px #333;
 }
+
+.active{
+  color: red !important;
+  border-top: #0d6efd 3px solid !important;
+
+  box-shadow: 5px 5px 5px rgba(51, 51, 51, 0.479);
+}

@@ -11,11 +11,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Tiệc trăng máu</td>
-          <td>Thái Hoà</td>
-          <td><a [href]="'#'">abc</a></td>
+        <tr *ngFor="let i = index; let movie of movies">
+          <th scope="row">{{i+1}}</th>
+          <td>{{movie.name}}</td>
+          <td>{{movie.author}}</td>
+          <td><a target="_blank" [href]="movie.link">Xem phim</a></td>
         </tr>
 
       </tbody>

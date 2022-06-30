@@ -10,6 +10,8 @@ import { NgOnInitComponent } from './components/ng-on-init/ng-on-init.component'
 import { OtherlifecycleComponent } from './components/otherlifecycle/otherlifecycle.component';
 import { ServiceViewComponent } from './views/service-view/service-view.component';
 import { MovieViewComponent } from './views/movie-view/movie-view.component';
+import { HomeRoutingComponent } from './components/routings/home-routing/home-routing.component';
+import { ProductDetailComponent } from './components/routings/product-detail/product-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'pipe', pathMatch: 'full' },
@@ -23,6 +25,11 @@ const routes: Routes = [
   { path: 'lifecyclehooks/others', component: OtherlifecycleComponent },
   { path: 'serviceview', component: ServiceViewComponent },
   { path: 'serviceview/movie', component: MovieViewComponent },
+  { path: 'homerouting', component: HomeRoutingComponent },
+  { path: 'productdetail/:id', component: ProductDetailComponent },
+  // { path: 'homerouting', component: HomeRoutingComponent },
+  // { path: 'homerouting', component: HomeRoutingComponent },
+  // { path: 'homerouting', component: HomeRoutingComponent },
   { path: '**', redirectTo: 'pipe', pathMatch: 'full' },
 ];
 

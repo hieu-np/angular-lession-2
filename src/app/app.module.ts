@@ -25,11 +25,17 @@ import { OtherlifecyclechildthreeComponent } from './components/otherlifecyclech
 import { ServiceViewComponent } from './views/service-view/service-view.component';
 import { FirtComponent } from './components/forServiceView/firt/firt.component';
 import { SecondComponent } from './components/forServiceView/second/second.component';
+import { MovieService } from './services/movie.service';
 
 import { LoggingService } from './services/logging.service';
 import { MovieViewComponent } from './views/movie-view/movie-view.component';
 import { MovieListComponent } from './components/movie/movie-list/movie-list.component';
 import { MovieAddEditComponent } from './components/movie/movie-add-edit/movie-add-edit.component';
+import { HomeRoutingComponent } from './components/routings/home-routing/home-routing.component';
+import { CurrencyvndPipe } from './pipes/currencyvnd.pipe';
+import { ProductService } from './services/product.service';
+import { ProductDetailComponent } from './components/routings/product-detail/product-detail.component';
+import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-query/home-pgae-query.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +64,10 @@ import { MovieAddEditComponent } from './components/movie/movie-add-edit/movie-a
     MovieViewComponent,
     MovieListComponent,
     MovieAddEditComponent,
+    HomeRoutingComponent,
+    CurrencyvndPipe,
+    ProductDetailComponent,
+    HomePgaeQueryComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +75,9 @@ import { MovieAddEditComponent } from './components/movie/movie-add-edit/movie-a
     FormsModule
   ],
   providers: [
-    LoggingService
+    LoggingService,
+    MovieService,
+    ProductService
 
   ],
   bootstrap: [AppComponent]
