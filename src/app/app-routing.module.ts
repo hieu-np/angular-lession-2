@@ -12,9 +12,14 @@ import { ServiceViewComponent } from './views/service-view/service-view.componen
 import { MovieViewComponent } from './views/movie-view/movie-view.component';
 import { HomeRoutingComponent } from './components/routings/home-routing/home-routing.component';
 import { ProductDetailComponent } from './components/routings/product-detail/product-detail.component';
-import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-query/home-pgae-query.component';
+import { LoginComponent } from './components/routings/login/login.component';
+import { HomeComponent } from './components/routings/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AccessGuard } from './guards/access.guard';
+
 const routes: Routes = [
-  { path: '', redirectTo: 'pipe', pathMatch: 'full' },
+  { path: '', redirectTo: 'access', pathMatch: 'full' },
+  { path: 'access', canDeactivate:[AccessGuard], component: HomeComponent },
   { path: 'pipe', component: PipeComponent },
   { path: 'custompipe', component: CustomPipeComponent },
   { path: 'sort', component: SortComponent },
@@ -25,12 +30,26 @@ const routes: Routes = [
   { path: 'lifecyclehooks/others', component: OtherlifecycleComponent },
   { path: 'serviceview', component: ServiceViewComponent },
   { path: 'serviceview/movie', component: MovieViewComponent },
-  { path: 'homerouting', component: HomeRoutingComponent },
-  { path: 'productdetail/:id', component: ProductDetailComponent },
-  { path: 'homeroutingquery', component: HomePgaeQueryComponent },
+  { path: 'homerouting', canActivate: [AuthGuard], component: HomeRoutingComponent },
+  { path: 'productdetail', 
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: '/homerouting',
+        pathMatch: 'full'
+      },
+      {
+        path: ':id',
+        component: ProductDetailComponent
+      }
+    ]
+
+  },
+  { path: 'login', component: LoginComponent },
   // { path: 'homerouting', component: HomeRoutingComponent },
   // { path: 'homerouting', component: HomeRoutingComponent },
-  { path: '**', redirectTo: 'pipe', pathMatch: 'full' },
+  { path: '**', redirectTo: 'access', pathMatch: 'full' },
 ];
 
 @NgModule({

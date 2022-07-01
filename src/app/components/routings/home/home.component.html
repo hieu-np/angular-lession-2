@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <div class="row" style="display: flex; justify-content: center;">
+    <div class="col col-8">
+      <p class="text-center">This App is private <br> Please enter keyword to use app.</p>
+    </div>
+    <div class="col col-8 text-center mb-1" *ngIf="error == -1">
+      <span class="badge bg-danger">Invalid key</span>
+    </div>
+    <div class="col col-6">
+      <input type="password" placeholder="| * | | * | | * | | * |" class="form-control text-center" #key
+      >
+      <button class="btn btn-primary form-control mt-2"
+        (click)="onAccess(key.value)"
+      >Enter</button>
+    </div>
+  </div>
+</div>

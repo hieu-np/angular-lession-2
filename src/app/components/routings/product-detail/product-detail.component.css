@@ -1,5 +1,22 @@
 .card-detail{
   border: 1px solid #0d6efd;
-  border-radius: 15px;
-  padding-left: 10px;
+  border-left: 10px solid #0d6efd;
+  border-radius: 15px 15px 15px 15px;
+  padding-left: 0px;
+}
+
+
+.card-detail-oos{
+  border: 1px solid #dc3545;
+  border-left: 10px solid #dc3545;
+  border-radius: 15px 15px 15px 15px;
+  padding-left: 0px;
+  box-shadow: 15px 15px 30px #333;
+}
+
+.close-to-list{
+  padding-top: 1rem;
+  text-align: center;
+  color: red;
+  cursor: pointer;
 }

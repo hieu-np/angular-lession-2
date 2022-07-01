@@ -35,7 +35,10 @@ import { HomeRoutingComponent } from './components/routings/home-routing/home-ro
 import { CurrencyvndPipe } from './pipes/currencyvnd.pipe';
 import { ProductService } from './services/product.service';
 import { ProductDetailComponent } from './components/routings/product-detail/product-detail.component';
-import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-query/home-pgae-query.component';
+import { LoginComponent } from './components/routings/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { HomeComponent } from './components/routings/home/home.component';
+import { AccessGuard } from './guards/access.guard';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,8 @@ import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-
     HomeRoutingComponent,
     CurrencyvndPipe,
     ProductDetailComponent,
-    HomePgaeQueryComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,9 @@ import { HomePgaeQueryComponent } from './components/routingwithquery/home-pgae-
   providers: [
     LoggingService,
     MovieService,
-    ProductService
+    ProductService,
+    AuthGuard,
+    AccessGuard
 
   ],
   bootstrap: [AppComponent]

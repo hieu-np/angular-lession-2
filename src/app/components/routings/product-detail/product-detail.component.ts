@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product.class';
 import { ProductService } from 'src/app/services/product.service';
 import { Subscription } from 'rxjs';
@@ -16,7 +16,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   constructor(
     public activatedRoute: ActivatedRoute,
     public productService: ProductService,
-    
+    public routerService: Router
   ) { }
 
   ngOnDestroy(): void {
@@ -46,5 +46,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     })
   }
   
+  onBackToList() {
+    this.routerService.navigate(['homerouting'])
+  }
 
 }
